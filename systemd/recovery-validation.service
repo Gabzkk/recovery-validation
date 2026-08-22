@@ -1,0 +1,39 @@
+[Unit]
+Description=Controlled backup recovery validation
+Documentation=file:/usr/share/doc/recovery-validation/runbook.md
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=/etc/recovery-validation/config.toml
+ConditionPathExists=/srv/recovery-validation/staging/.recovery-validation-staging
+
+[Service]
+Type=oneshot
+User=recovery-validation
+Group=recovery-validation
+EnvironmentFile=-/etc/recovery-validation/audit.env
+ExecStart=/opt/recovery-validation/venv/bin/recovery-validation run --config /etc/recovery-validation/config.toml
+UMask=0077
+NoNewPrivileges=yes
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectClock=yes
+ProtectControlGroups=yes
+ProtectHome=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectSystem=strict
+ReadOnlyPaths=/srv/recovery-validation/staging
+ReadWritePaths=/var/lib/recovery-validation/exercises
+CapabilityBoundingSet=
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+RestrictRealtime=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+
+[Install]
+WantedBy=multi-user.target

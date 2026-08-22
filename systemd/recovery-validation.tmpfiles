@@ -1,0 +1,4 @@
+d /var/lib/recovery-validation 0700 recovery-validation recovery-validation -
+d /var/lib/recovery-validation/exercises 0700 recovery-validation recovery-validation -
+d /srv/recovery-validation 0750 root recovery-validation -
+d /srv/recovery-validation/staging 0750 root recovery-validation -

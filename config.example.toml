@@ -1,0 +1,10 @@
+source_dir = "/srv/recovery-validation/staging"
+output_dir = "/var/lib/recovery-validation/exercises"
+rto_seconds = 14400
+max_file_bytes = 2147483648
+request_timeout_seconds = 10
+
+# Enable only after the audit receiver is approved.
+# audit_endpoint = "https://audit.healthcare.example/v1/recovery-summaries"
+# audit_token_env = "RECOVERY_AUDIT_TOKEN"
+# ca_bundle = "/etc/ssl/certs/ca-certificates.crt"
