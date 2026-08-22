@@ -2,6 +2,8 @@
 
 A contained recovery exercise for authorized `.docx` and `.pdf` staging datasets. It creates isolated AES-256-GCM ciphertext copies, decrypts them into a restoration tree, verifies SHA-256 equality, measures RTO/RPO, and emits compliance evidence without changing source files.
 
+![Recovery Validation architecture and dependency graph](preview.png)
+
 ## Safety Contract
 - Requires `.recovery-validation-staging` in the source root.
 - Rejects source/output overlap and every symbolic link in the staging tree.
