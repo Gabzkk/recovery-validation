@@ -35,4 +35,4 @@ Each run writes a UUID-named directory containing encrypted copies, restored cop
 - Python 3.11 `tomllib` reads TOML from binary file objects: https://docs.python.org/3.11/library/tomllib.html
 - systemd unit settings and sandboxing are defined by the upstream systemd manual sources: https://github.com/systemd/systemd/tree/main/man
 
-See `docs/spec.md`, `docs/threat-model.md`, and `docs/runbook.md` for the complete contract.
+See `docs/how-it-works.md` for the complete execution flow. The formal contract, threat model, and operator procedure remain in `docs/spec.md`, `docs/threat-model.md`, and `docs/runbook.md`.
